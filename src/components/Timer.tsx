@@ -4,8 +4,7 @@ const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 
-const Timer = ({ duration, onExpire }) => {
-  const [time, setTime] = useState(duration);
+const Timer = ({ time,setTime, onExpire }) => {
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -20,7 +19,7 @@ const Timer = ({ duration, onExpire }) => {
     return () => {
       clearTimeout(timerId);
     };
-  }, [time, onExpire]);
+  }, [time, setTime,onExpire]);
 
   const getFormattedTime = (time) => {
     const minutes = Math.floor((time % HOUR) / MINUTE);

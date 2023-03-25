@@ -13,7 +13,8 @@ enum QuizState {
 
 function App() {
   const [quizState, setQuizState] = React.useState(QuizState.NotStarted);
-   const [score, setScore] = React.useState(0)
+  const [score, setScore] = React.useState(0)
+  const [timeTaken, setTimeTaken] = React.useState(0)
   const handleTakeClick = () => {
     console.log('clicked');
     setQuizState(QuizState.Started);
@@ -28,12 +29,12 @@ function App() {
       }
       {
         quizState === QuizState.Started && (
-          <Ques setQuizState={setQuizState} quizState={QuizState} setScore={ setScore} />
+          <Ques setQuizState={setQuizState} quizState={QuizState} setScore={ setScore} setTimeTaken={setTimeTaken} />
         )
       }
       {
         quizState === QuizState.Finished && (
-          <Results score={score} quizState={QuizState} setQuizState={setQuizState} />
+          <Results score={score} quizState={QuizState} setQuizState={setQuizState} timeTaken={timeTaken} />
         )
       }
     </div>

@@ -1,11 +1,12 @@
 import React from 'react'
 import Button from './Button'
 
-const Results = ({score,quizState,setQuizState}) => {
+const Results = ({score,quizState,setQuizState,timeTaken}) => {
   return (
     <div>
       <h2>Results</h2>
       <h1>Score: {score}</h1>
+      <h2>Time Taken: {timeTaken/1000} seconds</h2>
       <div style={{display:'grid', gridTemplateColumns:'auto auto auto', margin:'10px', gap:'10px'}}>
         <Button title={'Play again'} handleClick={()=>setQuizState(quizState.Started)} />
         <Button title={'Share'} />
