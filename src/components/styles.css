@@ -1,0 +1,162 @@
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.quesListContainer{
+    background: white;
+    width:90%;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:10px;
+  }
+
+.cardContainer{
+  width: 90%;
+  height: 80px;
+  position:relative;
+  border-radius: 10px;
+}
+
+.cardLogo{
+  width: 20px;
+  position:absolute;
+  left:9px;
+  top:2px;
+}
+
+.cardLevel{
+    position: absolute;
+    left:10px;
+    top:10px;
+  }
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.btn{
+  width: 80%;
+  margin-left: 2%;
+  /* margin: auto; */
+  height: 50px;
+  border: none;
+  border: 1px solid white;
+  border-radius: 14px 14px 14px 14px;
+  background: #24a1bd;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn:hover{
+  background: #ffffff;
+  color: #24a1bd;
+  border: 1px solid #24a1bd;
+}
+
+.instructions{
+  width: 90%;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:left;
+  margin-bottom: 20px;
+  gap:20px;
+}
+
+.instructionsChild {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.instructionsChild p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.instructionsChild p{
+  font-size: 15px;
+  margin: 0;
+}
+
+.instructionsModal{
+  position: absolute;
+  border-radius: 20px 20px 0 0;
+  height:50%;
+  bottom:0;
+  width:100%;
+  display: none;
+  color: white;
+}
+
+.instructionsModalAnimation{
+  display: block;
+  animation: slide-in 0.5s forwards;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
