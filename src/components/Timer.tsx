@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
